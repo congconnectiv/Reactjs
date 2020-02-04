@@ -1,0 +1,1 @@
+Trong js, một số từ không được sử dụng, vd như "class" trong html. Vì nó được sử dụng class để tạo ra một class (lớp) mới. Đó là lý do vì sao chúng ta sử dụng "className"
