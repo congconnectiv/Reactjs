@@ -6,14 +6,14 @@ class Condition extends Component {
         super(props);
         this.state = {
             products : [
-                {name: 'Product 1', price: 600, status: true},
-                {name: 'Product 2', price: 50, status: true},
-                {name: 'Product 3', price: 0, status: true},
-                {name: 'Product 4', price: 200, status: false},
-                {name: 'Product 5', price: 300, status: true},
-                {name: 'Product 6', price: 0, status: true},
-                {name: 'Product 7', price: 500, status: false},
-                {name: 'Product 8', price: 0, status: true}
+                {id: 1, name: 'Product 1', price: 600, status: true},
+                {id: 2, name: 'Product 2', price: 50, status: true},
+                {id: 3, name: 'Product 3', price: 0, status: true},
+                {id: 4, name: 'Product 4', price: 200, status: false},
+                {id: 5, name: 'Product 5', price: 300, status: true},
+                {id: 6, name: 'Product 6', price: 0, status: true},
+                {id: 7, name: 'Product 7', price: 500, status: false},
+                {id: 8, name: 'Product 8', price: 0, status: true}
             ],
             isToggle: false
         };
@@ -40,10 +40,10 @@ class Condition extends Component {
         }
         
         let productItem = this.state.products.map((product, index) => {
-            const content =   <div className="wrapp-product" style={style} key={index}>
-                            <button onClick={this.onDeleteProduct.bind(this,index)} >Delete Product</button>
-                            <Product product={product} />
-                        </div>
+            const content = <div className="wrapp-product" style={style} key={product.id}>
+                                <button onClick={this.onDeleteProduct.bind(this,index)} >Delete Product</button>
+                                <Product product={product} />
+                            </div>
             return (product.status===true) ? content : null;
         });
 
