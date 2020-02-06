@@ -5,8 +5,7 @@ class Validation extends Component {
         super(props);
         this.state = {
             validation: '',
-            stringToArray: [],
-            statusText: true
+            stringToArray: []
         }
     }
     getValueJustEnter = (e) => {
@@ -17,7 +16,6 @@ class Validation extends Component {
     }
 
     onDeleteChar = (characterIndex) => {
-        this.state.statusText = true;
         const letterArray = this.state.stringToArray;
         letterArray.splice(characterIndex, 1);
         this.setState({stringToArray: letterArray});
