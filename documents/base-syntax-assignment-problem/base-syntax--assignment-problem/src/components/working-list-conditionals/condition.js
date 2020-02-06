@@ -9,11 +9,21 @@ class Condition extends Component {
                 {name: 'Product 1', price: 600, status: true},
                 {name: 'Product 2', price: 50, status: true},
                 {name: 'Product 3', price: 0, status: true},
-                {name: 'Product 3', price: 0, status: false}
-            ]
+                {name: 'Product 4', price: 200, status: false},
+                {name: 'Product 5', price: 300, status: true},
+                {name: 'Product 6', price: 0, status: true},
+                {name: 'Product 7', price: 500, status: false},
+                {name: 'Product 8', price: 0, status: true}
+            ],
+            isToggle: false
         };
     } 
     
+    toggleProductHandle = () => {
+        const toggle = this.state.isToggle;
+        this.setState({isToggle: !toggle});
+    }
+
     render() {
         let productItem = this.state.products.map((product, index) => {
             return product.status ? <Product key={index} product={product} /> : null
@@ -21,7 +31,12 @@ class Condition extends Component {
 
         return (
             <div className="condition-product">
-                {productItem}
+                <h2>Just click button to diplay content!</h2>
+                <button onClick={this.toggleProductHandle}>Toggle Products</button>
+                {
+                    this.state.isToggle === true ?
+                    productItem : null
+                }
             </div>
         );
     }
