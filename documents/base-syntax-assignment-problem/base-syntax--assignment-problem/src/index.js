@@ -5,14 +5,14 @@ import './index.css';
 // import UserData from './UserData';
 // import ProductList from './Product-app';
 // import AddProduct from './AddProduct';
-// import Condition from './components/working-list-conditionals/condition';
-import Validation from './components/Validation/validation';
+import Condition from './components/working-list-conditionals/condition';
+// import Validation from './components/Validation/validation';
 import registerServiceWorker from './registerServiceWorker';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<UserData />, document.getElementById('root'));
 // ReactDOM.render(<ProductList />, document.getElementById('root'));
-ReactDOM.render(<Validation />, document.getElementById('root'));
-// ReactDOM.render(<Condition />, document.getElementById('root'));
+// ReactDOM.render(<Validation />, document.getElementById('root'));
+ReactDOM.render(<Condition />, document.getElementById('root'));
 // ReactDOM.render(<AddProduct />, document.getElementById('root'));
 registerServiceWorker();

@@ -1,5 +1,14 @@
 import React, {Component} from 'react';
+// import Radium, {StyleRoot} from 'radium';
+import styled from 'styled-components';
 import Product from './product';
+
+const ConditionProduct = styled.div`
+    border: 1px solid #ccc;
+    background-color: #e8e8e8;
+    margin: 2em;
+    padding: 1em;
+`;
 
 class Condition extends Component {
     constructor(props) {
@@ -32,18 +41,18 @@ class Condition extends Component {
 
     render() {
 
-        const style = {
-            border: '1px solid #ccc',
-            backgroundColor:'#e8e8e8',
-            margin: '2em',
-            padding: '1em'
-        }
+        // const style = {
+        //     border: '1px solid #ccc',
+        //     backgroundColor:'#e8e8e8',
+        //     margin: '2em',
+        //     padding: '1em'
+        // }
         
         let productItem = this.state.products.map((product, index) => {
-            const content = <div className="wrapp-product" style={style} key={product.id}>
+            const content = <ConditionProduct key={product.id}>
                                 <button onClick={this.onDeleteProduct.bind(this,index)} >Delete Product</button>
                                 <Product product={product} />
-                            </div>
+                            </ConditionProduct>
             return (product.status===true) ? content : null;
         });
 
@@ -60,3 +69,4 @@ class Condition extends Component {
 }
 
 export default Condition;
+// export default Radium(Condition);

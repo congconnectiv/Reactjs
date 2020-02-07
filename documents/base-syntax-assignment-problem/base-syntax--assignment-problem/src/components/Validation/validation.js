@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import Radium, {StyleRoot} from 'radium';
 class Validation extends Component {
     constructor(props) {
         super(props);
@@ -28,7 +28,14 @@ class Validation extends Component {
             padding: '16px',
             textAlign: 'center',
             margin: '16px',
-            border: '1px solid black'
+            border: '1px solid black',
+            ':hover': {
+                backgroundColor: '#f00',
+                color: '#fff'
+            },
+            '@media (min-width: 500px)': {
+                backgroundColor: 'yellow'
+            }
         }
 
         let content = this.state.stringToArray.map(((letter, index) => {
@@ -36,19 +43,21 @@ class Validation extends Component {
         }));
 
         return (
-            <div className="from-group">
-                <label htmlFor="input-text">Enter value: </label>
-                <input 
-                type="text" 
-                onChange={this.getValueJustEnter} 
-                id="input-text" 
-                value={this.state.validation} 
-                />
-                <p>value entered: {this.state.validation}</p>
-                {content}
-            </div>
+            <StyleRoot>
+                <div className="from-group">
+                    <label htmlFor="input-text">Enter value: </label>
+                    <input 
+                    type="text" 
+                    onChange={this.getValueJustEnter} 
+                    id="input-text" 
+                    value={this.state.validation} 
+                    />
+                    <p>value entered: {this.state.validation}</p>
+                    {content}
+                </div>
+            </StyleRoot>
         );
     }
 }
 
-export default Validation;
+export default Radium(Validation);
